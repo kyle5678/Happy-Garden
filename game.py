@@ -13,6 +13,8 @@ hit_fang = False
 cow = Actor("cow")
 cow.pos = (WIDTH / 2), (HEIGHT / 2)
 
+zap = Actor("zap")
+
 watering = False
 
 flowers = []
@@ -47,6 +49,7 @@ def draw():
             else:
                 screen.draw.text("GAME OVER!!!", (10,50), color="red")
             end_done = True
+        zap.draw()
 
 def update():
     draw()
@@ -128,6 +131,7 @@ def check_fang_hit():
     for flower in flowers:
         if flower_status[index] == "fangflower":
             if flower.colliderect(cow):
+                zap.pos = cow.x, cow.y
                 hit_fang = True
                 game_over = True
         index += 1
