@@ -49,7 +49,8 @@ def draw():
             else:
                 screen.draw.text("GAME OVER!!!", (10,50), color="red")
             end_done = True
-        zap.draw()
+        if hit_fang:
+            zap.draw()
 
 def update():
     draw()
@@ -61,7 +62,7 @@ def update():
 
 def add_flower():
     new_flower = Actor("flower")
-    new_flower.pos = randint(0, WIDTH), randint(0, HEIGHT)
+    new_flower.pos = randint(0, WIDTH), randint(150, HEIGHT)
     flowers.append(new_flower)
     flower_status.append("happy")
     flower_game_text.append("")
@@ -153,7 +154,7 @@ def check_keyboard():
                 cow.x -= 2
             if keyboard.right and cow.x < WIDTH:
                 cow.x += 2
-            if keyboard.up and cow.y > 0:
+            if keyboard.up and cow.y > 150:
                 cow.y -= 2
             if keyboard.down and cow.y < HEIGHT:
                 cow.y += 2
@@ -162,7 +163,7 @@ def check_keyboard():
                 cow.x -= 5
             if keyboard.right and cow.x < WIDTH:
                 cow.x += 5
-            if keyboard.up and cow.y > 0:
+            if keyboard.up and cow.y > 150:
                 cow.y -= 5
             if keyboard.down and cow.y < HEIGHT:
                 cow.y += 5
@@ -192,7 +193,7 @@ def update_game_text():
 def weather_rain():
     global raining
     raining = True
-    clock.schedule(weather_sun, 30)
+    clock.schedule(weather_sun, 20)
 
 def weather_sun():
     global raining
