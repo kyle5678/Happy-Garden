@@ -8,9 +8,9 @@ You move the cow with the arrow keys. Water wilted flowers with
 spacebar. You will move slower while you are watering. A wilted
 flower has 10 seconds before it dies. You lose the game when a
 flower dies or you get zapped by a fangflower. Fangflowers are
-flowers that were mutated from normal flowers. Every 15 seconds,
-a flower mutates into a fangflower. Fangflowers will follow you.
-***Keep the garden happy for as long as possible!!!***
+mutated from normal flowers. Every 15 seconds, a flower mutates
+into a fangflower. Fangflowers will follow you. ***Keep the
+garden happy for as long as possible!!!***
 
 ## How to run
 This game uses Pygame Zero to run. Remember, you need to have
